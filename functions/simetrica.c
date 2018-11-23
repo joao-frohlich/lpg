@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "../header.h"
 
 int simetrica(Mat x){

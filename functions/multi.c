@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "../header.h"
 
 Mat multi(Mat x, Mat y){

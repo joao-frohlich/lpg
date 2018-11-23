@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <string.h>
 #include "header.h"
 
@@ -24,6 +23,7 @@ int main(int argc, char *argv[]){
               inicia_matriz(&m1, f1);
               fo = fopen(patho,"w");
               escreve_matriz(transpo(m1), fo);
+              desaloca_mat(&m1);
           }
           fclose(f1);
           fclose(fo);
@@ -53,6 +53,8 @@ int main(int argc, char *argv[]){
             } else {
                 escreve_matriz(soma_sub(m1, m2, 1), fo);
             }
+            desaloca_mat(&m1);
+            desaloca_mat(&m2);
         }
         fclose(f1);
         fclose(f2);
@@ -79,6 +81,8 @@ int main(int argc, char *argv[]){
               inicia_matriz(&m2, f2);
               fo = fopen(patho,"w");
               escreve_matriz(multi(m1, m2), fo);
+              desaloca_mat(&m1);
+              desaloca_mat(&m2);
           }
           fclose(f1);
           fclose(f2);
@@ -103,6 +107,7 @@ int main(int argc, char *argv[]){
               sscanf(argv[4],"%d",&esc);
               fo = fopen(patho,"w");
               escreve_matriz(multiesc(m1, esc), fo);
+              desaloca_mat(&m1);
           }
           fclose(f1);
           fclose(fo);
@@ -130,6 +135,8 @@ int main(int argc, char *argv[]){
                 printf("Matrizes iguais\n");
               else if (v == 0)
                 printf("Matrizes diferentes\n");
+              desaloca_mat(&m1);
+              desaloca_mat(&m2);
           }
           fclose(f1);
           fclose(f2);
@@ -153,8 +160,10 @@ int main(int argc, char *argv[]){
                 printf("Matriz simetrica\n");
               else if (v == 0)
                 printf("Matriz nao simetrica\n");
+              desaloca_mat(&m1);
           }
           fclose(f1);
       }
   }
+  return 0;
 }

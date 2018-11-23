@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "../header.h"
 
 Mat soma_sub(Mat x, Mat y, int tipo){

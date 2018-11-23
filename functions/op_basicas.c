@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "../header.h"
 
@@ -49,4 +48,12 @@ void gera_erro(Mat *x){
   x->m[0][0] = 0;
   x->w = -1;
   x->h = -1;
+}
+
+void desaloca_mat(Mat *x){
+  int i;
+  For(i,x->w){
+    free(x->m[i]);
+  }
+  free(x->m);
 }

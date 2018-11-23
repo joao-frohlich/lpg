@@ -12,6 +12,7 @@ void le_matriz(Mat *x, FILE *fp);
 void escreve_matriz(Mat x, FILE *fp);
 void inicia_matriz(Mat *x, FILE *fp);
 void gera_erro(Mat *x);
+void desaloca_mat(Mat *x);
 Mat soma_sub(Mat x, Mat y, int tipo);
 Mat transpo(Mat x);
 Mat multi(Mat x, Mat y);
