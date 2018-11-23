@@ -13,14 +13,16 @@ int main(int argc, char *argv[]){
           return 0;
       } else {
           FILE *f1, *fo;
-          char path1[16];
+          char path1[16], patho[12];
           strcpy(path1,"io/");
+          strcpy(patho,"io/");
           strcat(path1,argv[3]);
+          strcat(patho,argv[4]);
           f1 = fopen(path1,"r");
           if (f1 != NULL){
               Mat m1;
               inicia_matriz(&m1, f1);
-              fo = fopen(argv[4],"w");
+              fo = fopen(patho,"w");
               escreve_matriz(transpo(m1), fo);
           }
           fclose(f1);
@@ -32,18 +34,20 @@ int main(int argc, char *argv[]){
         return 0;
     } else {
         FILE *f1, *f2, *fo;
-        char path1[16], path2[16];
+        char path1[16], path2[16], patho[12];
         strcpy(path1,"io/");
         strcpy(path2,"io/");
+        strcpy(patho,"io/");
         strcat(path1,argv[3]);
         strcat(path2,argv[4]);
+        strcat(patho,argv[5]);
         f1 = fopen(path1,"r");
         f2 = fopen(path2,"r");
         if (f1 != NULL && f2 != NULL){
             Mat m1, m2;
             inicia_matriz(&m1, f1);
             inicia_matriz(&m2, f2);
-            fo = fopen(argv[5],"w");
+            fo = fopen(patho,"w");
             if (strcmp(argv[2],"soma") == 0){
                 escreve_matriz(soma_sub(m1, m2, 0), fo);
             } else {
@@ -60,18 +64,20 @@ int main(int argc, char *argv[]){
           return 0;
       } else {
           FILE *f1, *f2, *fo;
-          char path1[16], path2[16];
+          char path1[16], path2[16], patho[12];
           strcpy(path1,"io/");
           strcpy(path2,"io/");
+          strcpy(patho,"io/");
           strcat(path1,argv[3]);
           strcat(path2,argv[4]);
+          strcat(patho,argv[5]);
           f1 = fopen(path1,"r");
           f2 = fopen(path2,"r");
           if (f1 != NULL && f2 != NULL){
               Mat m1, m2;
               inicia_matriz(&m1, f1);
               inicia_matriz(&m2, f2);
-              fo = fopen(argv[5],"w");
+              fo = fopen(patho,"w");
               escreve_matriz(multi(m1, m2), fo);
           }
           fclose(f1);
@@ -84,16 +90,18 @@ int main(int argc, char *argv[]){
           return 0;
       } else {
           FILE *f1, *fo;
-          char path1[16];
+          char path1[16], patho[12];
           strcpy(path1,"io/");
+          strcpy(patho,"io/");
           strcat(path1,argv[3]);
+          strcat(patho,argv[4]);
           f1 = fopen(path1,"r");
           if (f1 != NULL){
               Mat m1;
               int esc;
               inicia_matriz(&m1, f1);
               sscanf(argv[4],"%d",&esc);
-              fo = fopen(argv[5],"w");
+              fo = fopen(patho,"w");
               escreve_matriz(multiesc(m1, esc), fo);
           }
           fclose(f1);
