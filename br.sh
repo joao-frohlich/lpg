@@ -25,8 +25,3 @@ rm multi.o
 rm multiesc.o
 rm iguais.o
 rm simetrica.o
-# mv main io
-# cd io
-# ./main < entrada1.txt > saida.txt
-# rm main
-# cd ../
