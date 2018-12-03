@@ -23,6 +23,7 @@ void escreve_matriz(Mat x, FILE *fp);
 void inicia_matriz(Mat *x, FILE *fp);
 void gera_erro(Mat *x);
 void desaloca_mat(Mat *x);
+char *path(char *s, int l);
 
 //Arquivo soma_sub.c
 Mat soma_sub(Mat x, Mat y, int tipo);

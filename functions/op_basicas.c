@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "../header.h"
 
 //Função para ler dimensões
@@ -89,4 +90,21 @@ void desaloca_mat(Mat *x){
   }
   //Desaloca as linhas da matriz
   free(x->m);
+}
+
+//Função para definir o caminho padrão de um arquivo
+//Entrada: Um ponteiro de char; um numero inteiro
+//Saida: Um ponteiro de char
+char *path(char *s, int l){
+  //Cria um ponteiro de char, utilizado na saida
+  char *r;
+  //Aloca r dinamicamente
+  //Tamanho definido pelo tamanho da string sendo utilizada com adição de 3 caracteres "io/"
+  r = malloc(l+3);
+  //Define o inicio do caminho do arquivo para a pasta "io"
+  strcpy(r,"io/");
+  //Copia ao final da string r o nome do arquivo passado pelo parametro s
+  strcat(r,s);
+  //Retorna r
+  return r;
 }
